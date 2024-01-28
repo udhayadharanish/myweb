@@ -602,9 +602,68 @@
             font-size: 0.7rem;
         }
     }
+    .loader{
+        
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+    .loader div{
+        height: 10px;
+        width: 10px;
+        
+        background-color: green;
+        animation-name: jump;
+        animation-duration: 0.9s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+
+    }
+    
+    .loader div:nth-child(1){
+        animation-delay: 0.3s;
+    }
+    .loader div:nth-child(2){
+        animation-delay: 0.6s;
+    }
+    .loader div:nth-child(3){
+        animation-delay: 0.9s;
+    }
+    @keyframes jump {
+        0%{
+            margin-bottom: 0;
+        }
+        50%{
+            margin-bottom: 10px;
+        }
+        100%{
+            margin-bottom: 0;
+        }
+    }
+    .load{
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
 </style>
 <body>
-    
+    <div class="load">
+        <div class="udhay">
+            < UDHAY />
+        </div>
+        <div class="loader">
+            
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
 
     <div class="home">
         <video autoplay muted loop>
@@ -740,6 +799,11 @@
 
     
     <script>
+        $(document).ready(()=>{
+
+            $(".load").fadeOut();
+            $(".home").fadeIn();
+        })
         var scroll = 0;
         $('.bulb').on("click",(event)=>{
             
