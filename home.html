@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> < Udhay /> </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<style>
+
+
+
+
+
+    .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.75rem;
+}
+
+
+    .lead{
+        font-weight: 400;
+    }
+    #home span{
+        color: #0b55c5;
+    }
+    #home {
+        color: #fff;
+        
+        /* font-family: monospace; */
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid #0d6efd; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        /* letter-spacing: .15em; Adjust as needed */
+        animation: 
+            typing 3.5s steps(30, end),
+            blink-caret .5s step-end infinite;
+    }
+
+        /* The typing effect */
+        @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+    #hero{
+        gap: 100px;
+    }
+    .skills{
+        display: grid;
+        padding-top: 35px;
+        padding-left: 30px;
+        padding-right: 30px;
+        position: relative;
+        margin: 50px 0;
+        /* border: 1px solid #0b55c5; */
+        border-radius: 10px;
+        background-color: whitesmoke;
+    }
+    .icon-div{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        height: 60px;
+        width: 60px;
+        transform: rotate(45deg);
+        top: -30px;
+        left: 70%;
+        border-radius: 10px;
+        background-color: #0d6efd;
+        
+        
+    }
+    
+    .icon-div img{
+        height: 40px;
+        border-radius: 20px;
+        transform: rotate(-45deg);
+    }
+    .sk{
+        gap: 10px;
+        display: flex;
+        justify-content: space-around;
+
+    }
+    .pic{
+        margin: 0;
+        display: flex;
+    justify-content: center;
+    }
+    .compatable{
+        margin: 20px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 200px 200px;
+        grid-auto-rows: 1;
+        
+    }
+    
+    .techs{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    
+    /* .test{
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100px;
+        background-color: #0d6dfd5b;
+        border-radius: 20px;
+        animation-name: rotating;
+        animation-duration: 15s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    } */
+    .techs img{
+        position: absolute;
+        z-index: 999;
+
+    }
+    .bottom{
+        font-size: 16px;
+        color: black;
+        top: 80px;
+        position: relative;
+        font-weight: 600;
+    }
+    .projects{
+        margin: 40px 0;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        grid-template-rows: auto;
+        grid-auto-columns: 1;
+        gap: 50px;
+        overflow-x: scroll;
+        width: auto;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;
+        
+        
+    }
+    .projects::-webkit-scrollbar{
+        display: none;
+    }
+    .projects .pj{
+        height: 400px;
+        width: 300px;
+        /* background-color: red; */
+        background: url("./images/profile-pic.png");
+        background-size: cover;
+        border-radius: 20px;
+        border: 2px solid whitesmoke;
+        transition-duration: 0.3s;
+        scroll-margin-left: 200px;
+        
+    }
+
+    .projects .pj:hover{
+        scale: 0.95;
+    }
+    
+    .hori{
+
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+    .hori div{
+        border-radius: 50%;
+        background-color: gray;
+        height: 10px;
+        width: 10px;
+        
+
+    }
+    
+    .contact{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        /* background-color: red; */
+        align-items: center;
+        
+    }
+    .contact > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    /* .contact img {
+        height: 400px;
+        width: 400px;
+        /* padding: 50px; */
+        /* justify-self: flex-start;
+    } */
+
+    .forms .content{
+        padding: 10px 20px;
+        background-color:#091c3afd;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: space-around;
+        color: white;
+        width: 70%;
+        height: 400px;
+    }
+    .content input{
+        height: 50px;
+        width: 100%;
+        border-radius: 10px;
+        padding: 15px;
+        border: none;
+    }
+    .content textarea{
+        height: 80px;
+        width: 100%;
+        border-radius: 10px;
+        padding: 15px;
+        
+    }
+    .button-me{
+       width: 100px;
+       border-radius: 5px;
+       border: none;
+       align-self: center;
+       padding: 10px;
+       background-color: #0d6efd;
+       color: white;
+    }
+    .button-me:hover{
+        background-color: #0b55c5;
+    }
+
+    .pj{
+        position: relative;
+        
+    }
+
+    .pj-des{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.7);
+        opacity: 0;
+        padding: 15px;
+        gap: 10px;
+        display: flex;
+        border-radius: 20px;
+        flex-direction: column;
+        color:white;
+        text-align: left;
+        justify-content: end;
+        transition-duration: 0.5s;
+    }
+    .pj-des:hover{
+        opacity: 1;
+    }
+    .pj-des p{
+        color: whitesmoke;
+    }
+    .visit{
+        margin: 20px 0;
+    }
+    .det{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .details{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 60%;
+        /* background-color: #0b55c5; */
+        align-items: flex-start;
+        justify-content: space-around;
+        background-color:rgb(220, 222, 231);
+        box-shadow: 0 0 10px #ccc;
+        padding: 20px;
+    }
+
+    .details div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    #projects{
+        position: relative;
+    }
+    .arrow-right{
+        position: absolute;
+        top: 45%;
+        right: 0;
+        z-index: 99;
+        /* background-color: rgba(0,0,0,0.2); */
+        /* filter: invert(1); */
+
+        
+    }
+    .arrow-left{
+        position: absolute;
+        top: 45%;
+        left: 0;
+        z-index: 99;
+        transform: rotate(180deg);    
+    }
+    .arrow-left button , .arrow-right button{
+        background-color: transparent;
+        border: none;
+    }
+
+    
+    @keyframes rotating {
+        100%{transform: rotate(360deg);}
+    }
+
+    .home{
+        position: relative;
+        height: 100vh;
+        width: 100%;
+       
+    }
+    
+    .name{
+        color: whitesmoke;
+        font-size: 95px;
+        font-weight: 900;
+    }
+    video {
+    object-fit: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background: rgba(0,0,0,0.6);
+    }
+    @media (max-width:550px) {
+        .name{
+            font-size: 60px;
+        }
+    }
+    .banner{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        flex-wrap: wrap-reverse;
+        align-items: center;
+    }
+    .outline{
+        color: black; /* Set the text color */
+        text-shadow: 
+            -1px -1px 0 #fff,  
+            1px -1px 0 #fff,
+            -1px  1px 0 #fff,
+            1px  1px 0 #fff; /* Set the shadow offsets and color */
+        background-color: transparent; /* Set the background color */
+        padding: 10px;
+    }
+    .home-content{
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .project-div{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        display: none;
+        overflow-y: scroll;
+        
+
+    }
+    .line-1{
+        height: 300px;
+        background-color: white;
+        width: 3px;
+    }
+    .line-2{
+        height: 200px;
+        background-color: white;
+        width: 3px;
+    }
+    .line-3{
+        height: 50px;
+        background-color: white;
+        width: 3px;
+    }
+    .line-4{
+        height: 280px;
+        background-color: white;
+        width: 3px;
+    }
+    .line-5{
+        height: 150px;
+        background-color: white;
+        width: 3px;
+    }
+    .line-6{
+        height: 190px;
+        background-color: white;
+        width: 3px;
+    }
+    .wire{
+        width: 250px;
+    }
+    .bulb{
+        width: 75%;
+        aspect-ratio: 1/1;
+        /* background-color:  rgb(207, 204, 204);
+         */
+        border :2px solid rgb(116, 131, 127);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition-duration: 0.3s;
+        background-color: transparent;
+        /* border: none; */
+    }
+    .bulb:hover{
+        background-color: rgba(255,255,255,0.5);
+        
+        /* background-color: rgb(236, 221, 133); */
+        /* box-shadow: 0 0 50px 50px #ffd700; */
+    }
+    
+    .switch{
+        color: white;
+        font-size: 22px;
+        text-shadow: 2px 2px 8px  white;
+        display: none;
+    }
+    .bulb:hover .turn{
+        display: none;
+    }
+    .bulb:hover .switch{
+        display : initial;
+    }
+    .container{
+        transition-duration: 0.5s;
+        grid-row: auto;
+        /* position: relative; */
+        /* background-color: rgb(24, 18, 18); */
+        height:fit-content;
+        width: 100vw;
+        overflow-x: scroll;
+        padding-bottom: 50px;
+        
+        
+    
+    }
+
+    .row{
+        display: flex;
+        flex-wrap: nowrap;
+        
+    }
+    
+    
+    .row div{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+    }
+    .project{
+        display: none;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top:0;
+        left: 0;
+        /* background-color: ; */
+        z-index: 9;
+    }
+    .light-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .light{
+        width: 120px;
+        height: 120px;
+        border: none;
+        border-radius: 50%;
+        color: rgba(0,0,0,0.6);
+        box-shadow: 0 0 50px 50px #ffd700;
+        background-color: #ffd700;
+    }
+    .light:hover{
+        background-color: #ffd700;
+    }
+    .turn{
+        font-size: 22px ;
+        color: lightgray;
+    }
+    .white-bg{
+        background-color: white;
+    }
+    .space{
+        height: 400px;
+    }
+    .heading{
+        display: flex;
+        justify-content: center;
+        height: 200px;
+        color: lightgray;
+        align-items: center;
+    }
+    .project-content{
+        display: flex;
+        top: 100px;
+        
+        /* align-items: center; */
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        gap: 20px;
+        color: rgb(178, 183, 187);
+    }
+    .project-content div img{
+        max-height: 300px;
+    }
+    .text-content{
+        max-width: 400px;
+    }
+   
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .back{
+        position: absolute;
+        top: 20px;
+        left: 10px ;
+        z-index: 99;
+        
+    }
+    .back a{
+        color: whitesmoke;
+        font-weight: 300;
+        text-decoration: underline;
+        font-size: 25px;
+    }
+    .achievements{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .home-content .nav {
+        color: lightgray;
+        background-color: rgba(4, 59, 13, 0.623);
+        border-radius: 8px;
+    }
+    .home-content .nav-link{
+        color: rgb(214, 213, 213);
+        padding: 8px 12px;
+        transition-duration: 0.2s;
+    }
+    .nav-link:hover{
+        background-color: rgba(255,255,255,0.8);
+        color: rgba(0,0,0,1);
+    }
+    @media (max-width:450px) {
+        .nav-link{
+            font-size: 0.7rem;
+        }
+    }
+</style>
+<body>
+    
+
+    <div class="home">
+        <video autoplay muted loop>
+            <source src="Images/video.mp4" type="video/mp4" />
+          </video>
+         
+          
+          <div class="overlay"></div>
+        
+    
+        <div class="home-content" >
+            <div class="container">
+                <header class="d-flex justify-content-center py-3">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a></li>
+                        <li class="nav-item"><a href="/achievement.html" id="achieve" class="nav-link">Skills</a></li>
+                        <li class="nav-item"><a href="#" id="project" class="nav-link">Projects</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </header>
+            </div>
+            <div class="banner">
+                <div class="col-lg-5 p-0 overflow-hidden pic">
+                    <img class="rounded-lg-3" src="./Images/profile-pic.png" alt="" height="400" width="400">
+                </div>
+    
+                <div class="px-0">
+                    <h1 class="lh-2 mb-3 name " >I'M UDHAY </h1>
+                    <h1 class="lh-2 mb-3 name outline" >I'M UDHAY </h1>
+                    <h1 class="lh-2 mb-3 name " >I'M UDHAY </h1> 
+                </div>
+            </div>
+          
+        </div>
+        <div class="project-div">
+            <div class="back" id="back">
+                <a href="#" ><img src="./images/backarrow.svg" height="40" alt=""> Home </a>
+            </div>
+            <div class="heading">
+                <h1>PROJECTS</h1>
+            </div>
+            <div class="container" id="container">
+                
+                
+                <div class="row">
+                    <div class="wire">
+                        <div class="line-1"></div>
+                        <button class="bulb" id="b1">
+                            <p class="turn">Website <br> Builder</p>
+                            <p class="switch">Turn on</p>
+
+                        </button>
+                    </div>
+                    <div class="wire">
+                        <div class="line-2"></div>
+                        <button class="bulb" id="b2">
+                            <p class="turn">Smart Mirror</p>
+                            <p class="switch">Turn on</p>
+                        </button>
+                    </div>
+                    <div class="wire">
+                        <div class="line-3"></div>
+                        <button class="bulb" id="b3">
+                            <p class="turn">Blog <br> Website</p>
+                            <p class="switch">Turn on</p>
+                        </button>
+                    </div>
+                    <div class="wire">
+                        <div class="line-4"></div>
+                        <button class="bulb" id="b4">
+                            <p class="turn">Parking System</p>
+                            <p class="switch">Turn on</p>
+                        </button>
+                    </div>
+                    <div class="wire">
+                        <div class="line-5"></div>
+                        <button class="bulb" id="b5">
+                            <p class="turn">EV Charging Booking System</p>
+                            <p class="switch">Turn on</p>
+                        </button>
+                    </div>
+                    <div class="wire">
+                        <div class="line-6"></div>
+                        <button class="bulb" id="b6">
+                            <p class="turn">Simple Authentication</p>
+                            <p class="switch">Turn on</p>
+                        </button>
+                    </div>
+        
+                    <div class="wire ">
+                        <div class="line-1"></div>
+                        <button class="bulb" id="b1">
+                            <p class="turn">Task Management System</p>
+                            <p class="switch">Turn on</p>
+                        </button>
+                    </div>
+                    <div class="wire">
+                        <div class="line-2"></div>
+                        <button class="bulb" id="b2">
+                            <p class="turn">Perfect One</p>
+                            <p class="switch">Turn on</p>
+                        </button>
+                    </div>  
+                    
+                </div>
+                <div class="project">
+                    <div class="light-container">
+                        <div class="line-3"></div>
+                        <button class="light bulb" >Turn off</button>
+                    </div>
+                    <div class="project-content container">
+                        <div>
+                            <img src="./images/project.avif"   alt="">
+                        </div>
+                        <div class="text-content">
+                            <h1 id="p-title" >Project title</h1>
+                            <p id="p-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium aut doloremque voluptatibus doloribus dicta magnam eius obcaecati tempora reiciendis unde quo corporis nemo adipisci error magni sunt animi, aspernatur similique. </p>
+                            <p id="tech-stack"> Tech Stacks : Java , Python , React , Node , SQL</p>
+                            <div style="display: flex;gap: 20px;">
+                                <button class="btn btn-success" style="display: flex;align-items: center;gap: 10px;"> Visit <img src="./images/link.svg" alt=""></button>
+                                <a href=""><img src="./images/github.svg" alt="" height="40"></a>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+            
+        </div>
+    </div>
+
+    
+    <script>
+        var scroll = 0;
+        $('.bulb').on("click",(event)=>{
+            
+            $(event.target.classList['value'])
+            $(".row").fadeToggle(300);
+            $(".project").fadeToggle(300);
+    
+        })
+
+        
+
+        // Get the scrolling element
+        const scrollingElement = document.getElementById('container');
+         
+        // Set the initial direction of the scroll
+        let scrollDirection = 1; // 1 for scrolling to the right, -1 for scrolling to the left
+
+        // Set the speed of the scroll (adjust as needed)
+        const scrollSpeed = 2; // Adjust the speed as needed
+
+        // Function to handle the scrolling
+        function scrollContent() {
+            scrollingElement.scrollLeft += scrollDirection * scrollSpeed;
+
+            // Check if the content has reached the end and reverse direction
+            if (scrollingElement.scrollLeft >= scrollingElement.scrollWidth - scrollingElement.clientWidth ||
+                scrollingElement.scrollLeft <= 0) {
+                scrollDirection *= -1;
+            }
+        }
+
+        scrollInterval = setInterval(scrollContent, 30);
+
+        scrollingElement.addEventListener("mouseenter",()=>{
+            clearInterval(scrollInterval);
+        })
+        scrollingElement.addEventListener("mouseleave",()=>{
+            scrollInterval = setInterval(scrollContent, 30);
+        })
+        
+        
+
+        // Set the interval for scrolling (adjust as needed)
+         // Adjust the interval as needed
+
+        
+        
+        
+                
+    
+    </script>
+    <script>
+        $("#project").click(()=>{
+            console.log($("#project"));
+            $(".home-content").fadeOut();
+            $(".project-div").fadeIn();
+        })
+        $("#back").click(()=>{
+            $(".project-div").fadeOut();
+            $(".home-content").fadeIn();
+        })
+        
+    </script>
+
+    
+</body>
+</html>

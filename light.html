@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<style>
+    body{
+        background-color: black;
+    }
+    /* .top{
+        height: 100px;
+        background-color: rgb(180, 180, 194);
+        position: relative;
+    } */
+    /* .top:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255, 1) 90%);
+        width: 100%;
+        height: 4em;
+    } */
+    
+    .line-1{
+        height: 300px;
+        background-color: white;
+        width: 3px;
+    }
+    .line-2{
+        height: 200px;
+        background-color: white;
+        width: 3px;
+    }
+    .line-3{
+        height: 50px;
+        background-color: white;
+        width: 3px;
+    }
+    .line-4{
+        height: 280px;
+        background-color: white;
+        width: 3px;
+    }
+    .line-5{
+        height: 150px;
+        background-color: white;
+        width: 3px;
+    }
+    .line-6{
+        height: 190px;
+        background-color: white;
+        width: 3px;
+    }
+    .wire{
+        width: 250px;
+    }
+    .bulb{
+        width: 75%;
+        aspect-ratio: 1/1;
+        /* background-color:  rgb(207, 204, 204);
+         */
+         background-color: rgb(33, 37, 41);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition-duration: 0.3s;
+        border: none;
+    }
+    .bulb:hover{
+        background-color: rgb(57, 62, 68);
+        /* background-color: rgb(236, 221, 133); */
+        /* box-shadow: 0 0 50px 50px #ffd700; */
+    }
+    .container{
+        transition-duration: 0.5s;
+        grid-row: auto;
+        /* position: relative; */
+        /* background-color: rgb(24, 18, 18); */
+        height:fit-content;
+        width: 100vw;
+        overflow-x: scroll;
+        padding-bottom: 50px;
+        
+        
+    
+    }
+
+    .row{
+        display: flex;
+        flex-wrap: nowrap;
+        
+    }
+    
+    
+    .row div{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+    }
+    .project{
+        display: none;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top:0;
+        left: 0;
+        /* background-color: ; */
+        z-index: 9;
+    }
+    .light-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .light{
+        width: 120px;
+        height: 120px;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 0 50px 50px #ffd700;
+        background-color: #ffd700;
+    }
+    .light:hover{
+        background-color: #ffd700;
+    }
+    .turn{
+        font-size: 22px ;
+        color: darkkhaki;
+    }
+    .white-bg{
+        background-color: white;
+    }
+    .space{
+        height: 400px;
+    }
+    .heading{
+        display: flex;
+        justify-content: center;
+        height: 200px;
+        align-items: center;
+    }
+    .project-content{
+        display: flex;
+        top: 100px;
+        /* align-items: center; */
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        gap: 20px;
+        
+        color: rgb(178, 183, 187);
+    }
+    .project-content div img{
+        max-height: 300px;
+    }
+    .text-content{
+        max-width: 400px;
+    }
+   
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(8, 8, 8); /* Set the color of the thumb */
+        border-radius: 10px;
+        
+    }
+
+    ::-webkit-scrollbar-track {
+
+        background-color: black; /* Set the color of the track */
+        width: 2px;
+    }
+    .back{
+        position: absolute;
+        top: 20px;
+        left: 10px ;
+        
+    }
+    .back a{
+        color: whitesmoke;
+        font-weight: 300;
+        text-decoration: underline;
+        font-size: 25px;
+    }
+
+        
+    
+</style>
+
+
+<body>
+    <div class="back">
+        <a href="./home.html" id="back"><img src="./images/backarrow.svg" height="40" alt=""> Home </a>
+    </div>
+    <div class="heading">
+        <h1>PROJECTS</h1>
+    </div>
+    <div class="container" id="container">
+        
+        
+        <div class="row">
+            <div class="wire">
+                <div class="line-1"></div>
+                <button class="bulb" id="b1">
+                    <p class="turn">Website <br> Builder</p>
+                </button>
+            </div>
+            <div class="wire">
+                <div class="line-2"></div>
+                <button class="bulb" id="b2">
+                    <p class="turn">Smart Mirror</p>
+                </button>
+            </div>
+            <div class="wire">
+                <div class="line-3"></div>
+                <button class="bulb" id="b3">
+                    <p class="turn">Blog <br> Website</p>
+                </button>
+            </div>
+            <div class="wire">
+                <div class="line-4"></div>
+                <button class="bulb" id="b4">
+                    <p class="turn">Parking System</p>
+                </button>
+            </div>
+            <div class="wire">
+                <div class="line-5"></div>
+                <button class="bulb" id="b5">
+                    <p class="turn">EV Charging Booking System</p>
+                </button>
+            </div>
+            <div class="wire">
+                <div class="line-6"></div>
+                <button class="bulb" id="b6">
+                    <p class="turn">Simple Authentication</p>
+                </button>
+            </div>
+
+            <div class="wire ">
+                <div class="line-1"></div>
+                <button class="bulb" id="b1">
+                    <p class="turn">Task Management System</p>
+                </button>
+            </div>
+            <div class="wire">
+                <div class="line-2"></div>
+                <button class="bulb" id="b2">
+                    <p class="turn">Perfect One</p>
+                </button>
+            </div>  
+            
+        </div>
+        <div class="project">
+            <div class="light-container">
+                <div class="line-3"></div>
+                <button class="light bulb" ></button>
+            </div>
+            <div class="project-content container">
+                <div>
+                    <img src="./images/project.avif"   alt="">
+                </div>
+                <div class="text-content">
+                    <h1 id="p-title" >Project title</h1>
+                    <p id="p-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium aut doloremque voluptatibus doloribus dicta magnam eius obcaecati tempora reiciendis unde quo corporis nemo adipisci error magni sunt animi, aspernatur similique. </p>
+                    <p id="tech-stack"> Tech Stacks : Java , Python , React , Node , SQL</p>
+                    <div style="display: flex;gap: 20px;">
+                        <button class="btn btn-success" style="display: flex;align-items: center;gap: 10px;"> Visit <img src="./images/link.svg" alt=""></button>
+                        <a href=""><img src="./images/github.svg" alt="" height="40"></a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        var scroll = 0;
+        $('.bulb').on("click",(event)=>{
+            
+            $(event.target.classList['value'])
+            $(".row").fadeToggle(300);
+            $(".project").fadeToggle(300);
+    
+        })
+
+        
+
+        // Get the scrolling element
+        const scrollingElement = document.getElementById('container');
+         
+        // Set the initial direction of the scroll
+        let scrollDirection = 1; // 1 for scrolling to the right, -1 for scrolling to the left
+
+        // Set the speed of the scroll (adjust as needed)
+        const scrollSpeed = 2; // Adjust the speed as needed
+
+        // Function to handle the scrolling
+        function scrollContent() {
+            scrollingElement.scrollLeft += scrollDirection * scrollSpeed;
+
+            // Check if the content has reached the end and reverse direction
+            if (scrollingElement.scrollLeft >= scrollingElement.scrollWidth - scrollingElement.clientWidth ||
+                scrollingElement.scrollLeft <= 0) {
+                scrollDirection *= -1;
+            }
+        }
+
+        scrollInterval = setInterval(scrollContent, 30);
+
+        scrollingElement.addEventListener("mouseenter",()=>{
+            clearInterval(scrollInterval);
+        })
+        scrollingElement.addEventListener("mouseleave",()=>{
+            scrollInterval = setInterval(scrollContent, 30);
+        })
+        
+        
+
+        // Set the interval for scrolling (adjust as needed)
+         // Adjust the interval as needed
+
+        
+        
+        
+                
+    
+    </script>
+</body>
+</html>
