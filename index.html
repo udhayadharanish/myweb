@@ -519,7 +519,7 @@
         width: 100%;
         top:0;
         left: 0;
-        overflow-y:scroll;
+        overflow-y: scroll;
         /* background-color: ; */
         z-index: 9;
     }
@@ -1095,15 +1095,15 @@
                         </div>
                         <div class="project-content container">
                             <div>
-                                <img src="./images/project.avif"   alt="">
+                                <img id="project-img" src="./images/project.avif"   alt="">
                             </div>
                             <div class="text-content">
                                 <h1 id="p-title" ></h1>
                                 <p id="p-para"></p>
                                 <span><p style="text-decoration: underline;">Tech Stacks</p><p id="tech-stack"></p></span>
                                 <div style="display: flex;gap: 20px;">
-                                    <button class="btn btn-success" style="display: flex;align-items: center;gap: 10px;"> Visit <img src="./images/link.svg" alt=""></button>
-                                    <a href=""><img src="./images/github.svg" alt="" height="40"></a>    
+                                    <a href="" id="visit-link"><button class="btn btn-success" style="display: flex;align-items: center;gap: 10px;"> Visit <img src="./images/link.svg" alt=""></button></a>
+                                    <a href="" id="git-link"><img src="./images/github.svg" alt="" height="40"></a>    
                                 </div>
                             </div>
                         </div>
@@ -1384,37 +1384,58 @@
                     "Smart Mirror" : {
                         title : "AUTOMATED HAND HYGIENE MONITORING SYSTEM",
                         description : "HealthMirror uses Computer Vision and Raspberry Pi to monitor hand hygiene in real-time, updating infection control departments via a live website.",
-                        tech_stacks : "Flask , OpenCV , HTML , CSS , JS"
+                        tech_stacks : "Flask , OpenCV , HTML , CSS , JS",
+                        img : "./images/mirro.png",
+                        visit : "https://smartmirror-qh43.onrender.com",
+                        github : ""
                     },
                     "Blog Website" : {
                         title : "BLOGGING PLATFORM",
                         description : "A dynamic web platform with robust authentication enables users to write, read, update, and delete blogs through an intuitive interface.",
-                        tech_stacks : ": Node (Express JS) , PostgreSQL , HTML , CSS , EJS , JS"
+                        tech_stacks : ": Node (Express JS) , PostgreSQL , HTML , CSS , EJS , JS",
+                        img : "./images/blog.png",
+                        visit : "https://github.com/udhayadharanish/Blog",
+                        github : "https://github.com/udhayadharanish/Blog"
                     },
                     "Website Builder" : {
                                         title : "U-CODE WEBSITE BUILDER (LOW CODE NO CODE PLATFORM)",
                                         description : "A user-friendly website builder enables effortless creation of stunning websites, allowing customization and easy download for online presence.",
-                                        tech_stacks : "Flask , HTML , CSS , JS"
+                                        tech_stacks : "Flask , HTML , CSS , JS",
+                                        img : "./images/ucode.png",
+                                        visit : "https://udhay.onrender.com/",
+                                        github : "https://github.com/udhayadharanish/website-builder"
                                     },
                     "Contri.ai" : {
                         title : "CONTRI.AI",
                         description : "Developed the website for the company contri.ai. Through website development, I acquired knowledge in cube animations and honed my JavaScript skills, empowering me to craft compelling landing pages with dynamic elements and interactive features",
-                        tech_stacks : "HTML , CSS , JS"
+                        tech_stacks : "HTML , CSS , JS",
+                        img : "./images/contri.png",
+                        visit : "https://contri.ai/",
+                        github : ""
                     },
                     "Task Management System" : {
                                         title : "Task Management System",
                                         description : "It sorts your tasks based on when they're due and how stressed you feel about them. With our system, you can manage your work easily and focus on what's important.",
-                                        tech_stacks : "Django , Flask , HTML , CSS , JS"
+                                        tech_stacks : "Django , Flask , HTML , CSS , JS",
+                                        img : "./images/taskmanagement.png",
+                                        visit : "",
+                                        github : "https://github.com/udhayadharanish/task-management-django"
                                     },
                     "Department Store Software" : {
                         title : "Department Store Software",
                         description : " In this the owner can add , update , delete Items and customers can buy items . The item added to the cart , when customer buys any item .It will generate softcopy of bill at end of the shopping .",
-                        tech_stacks : "Tkinter Python"
+                        tech_stacks : "Tkinter Python",
+                        img : "./images/dept.png",
+                        visit : "",
+                        github : "https://github.com/udhayadharanish/DepartmentStore-TKINTER"
                     },
                     "Parking System" : {
                                         title : "Under Construction ",
                                         description : "The project is going on ",
-                                        tech_stacks : "Node JS , Express , PostgreSQL , EJS , HTML , CSS , JS"
+                                        tech_stacks : "Node JS , Express , PostgreSQL , EJS , HTML , CSS , JS",
+                                        img : "./images/project.avif",
+                                        visit : "",
+                                        github : "https://github.com/udhayadharanish/DepartmentStore-TKINTER"
                                     }
                 }
         var scroll = 0;
@@ -1423,62 +1444,27 @@
             var div = event.target;
             var title = div.innerHTML;
             console.log(title);
-            if (title == "Smart Mirror") {
+            if (title == "Smart Mirror" || title == "Blog Website" || title == "Website Builder" || title == "Contri.ai" || title == "Task Management System" || title == "Department Store Software" || title == "Parking System") {
                 console.log("hey");
                 $("#p-title").html(projects_data[title].title);
                 $("#p-para").html(projects_data[title].description);
                 $("#tech-stack").html(projects_data[title].tech_stacks);
+                $("#visit-link").attr("href",projects_data[title].visit);
+                $("#git-link").attr("href",projects_data[title].github);
+                $("#project-img").attr("src",projects_data[title].img);
             }
-            if (title == "Blog Website") {
-                console.log("hey");
-                $("#p-title").html(projects_data[title].title);
-                $("#p-para").html(projects_data[title].description);
-                $("#tech-stack").html(projects_data[title].tech_stacks);
-            }
-            if (title == "Website Builder") {
-                console.log("hey");
-                $("#p-title").html(projects_data[title].title);
-                $("#p-para").html(projects_data[title].description);
-                $("#tech-stack").html(projects_data[title].tech_stacks);
-            }
-            if (title == "Contri.ai") {
-                console.log("hey");
-                $("#p-title").html(projects_data[title].title);
-                $("#p-para").html(projects_data[title].description);
-                $("#tech-stack").html(projects_data[title].tech_stacks);
-            }
-            if (title == "Task Management System") {
-                console.log("hey");
-                $("#p-title").html(projects_data[title].title);
-                $("#p-para").html(projects_data[title].description);
-                $("#tech-stack").html(projects_data[title].tech_stacks);
-            }
-            if (title == "Department Store Software") {
-                console.log("hey");
-                $("#p-title").html(projects_data[title].title);
-                $("#p-para").html(projects_data[title].description);
-                $("#tech-stack").html(projects_data[title].tech_stacks);
-            }
-            if (title == "Parking System") {
-                console.log("hey");
-                $("#p-title").html(projects_data[title].title);
-                $("#p-para").html(projects_data[title].description);
-                $("#tech-stack").html(projects_data[title].tech_stacks);
-            }
-            // if (title == "Simple Authentication") {
-            //     console.log("hey");
-            //     $("#p-title").html(projects_data[title].title);
-            //     $("#p-para").html(projects_data[title].description);
-            //     $("#tech-stack").html(projects_data[title].tech_stacks);
-            // }
+            
             else {
                 
                 var p = $(div).find("p").html();
                 console.log(p)
                 if(p){
                     $("#p-title").html(projects_data[p].title);
-                $("#p-para").html(projects_data[p].description);
-                $("#tech-stack").html(projects_data[p].tech_stacks);
+                    $("#p-para").html(projects_data[p].description);
+                    $("#tech-stack").html(projects_data[p].tech_stacks);
+                    $("#visit-link").attr("href",projects_data[p].visit);
+                    $("#git-link").attr("href",projects_data[p].github);
+                    $("#project-img").attr("src",projects_data[p].img);
                 }
                 
                 // console.log(p);
