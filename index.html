@@ -380,11 +380,15 @@
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 100%;
+        position: absolute;
+        top: 10%;
+        min-height: 90vh;
         justify-content: center;
         flex-wrap: wrap-reverse;
         align-items: center;
     }
+    
+    
     .outline{
         color: black; /* Set the text color */
         text-shadow: 
@@ -402,11 +406,13 @@
     }
     .project-div{
         position: absolute;
-        height: 100%;
+        height: 90%;
         width: 100%;
-        top: 0;
+        top: 10%;
+        
         display: none;
-        overflow-y: scroll;
+        overflow-y: hidden;
+
         
 
     }
@@ -477,7 +483,7 @@
     .bulb:hover .switch{
         display : initial;
     }
-    .container{
+    .project-div .container{
         transition-duration: 0.5s;
         grid-row: auto;
         /* position: relative; */
@@ -491,14 +497,14 @@
     
     }
 
-    .row{
+    .project-div .row{
         display: flex;
         flex-wrap: nowrap;
         
     }
     
     
-    .row div{
+    .project-div .row div{
         
         display: flex;
         flex-direction: column;
@@ -547,7 +553,8 @@
     .heading{
         display: flex;
         justify-content: center;
-        height: 200px;
+        height: 70px;
+        /* margin-top: 30px 0; */
         color: lightgray;
         align-items: center;
     }
@@ -587,10 +594,9 @@
         font-size: 25px;
     }
     .achievements{
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 100%;
+        min-height: 300px;
+        height: fit-content;
+        width: 90%;
     }
     .home-content .nav {
         color: lightgray;
@@ -652,6 +658,7 @@
             margin-bottom: 0;
         }
     }
+    
     .load{
         display: flex;
         height: 100vh;
@@ -659,6 +666,295 @@
         justify-content: center;
         align-items: center;
         background-color: black;
+    }
+    .skills-div{
+        position: absolute;
+        height: 90%;
+        width: 100%;
+        top: 10%;
+        display: none;
+        overflow-y: scroll;
+        background-color: transparent;
+        gap: 20px;
+    }
+    .skill-card{
+        border: 2px solid #212529;
+        border-radius: 5px;
+        padding: 10px;
+        transition-duration: 0.2s;
+    }
+    .skills-div .container{
+        width: auto;
+        overflow: hidden;
+    }
+    .skills-div .container .row{
+        justify-content: center;
+        overflow: hidden;
+    }
+    .heading h3{
+        color: rgb(96, 100, 97);
+    }
+    .skills-div .row div{
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        scale: 0.95;
+        
+    }
+    .skills-div .container .heading {
+        justify-content: flex-start;
+    }
+    .skill-card img{
+        height: 30px;
+        width: 30px;
+        filter: invert(1);
+    }
+
+    .skill-card h5{
+        margin: 0;
+        color: rgb(165, 204, 171);
+    }
+    .skill-card:hover{
+        background-color: rgba(4, 59, 13, 0.623);
+    }
+    .about-div{
+        position: absolute;
+        height: 90%;
+        width: 100%;
+        top: 10%;
+        display: none;
+        overflow-y: scroll;
+        
+        background-color: transparent;
+        gap: 20px;   
+    }
+    .institute{
+        width: fit-content;
+        scale: 0.95;
+        margin-bottom: 30px;
+        transition-duration: 0.2s;
+        padding: 20px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: 2px solid gray;
+
+    }
+    
+    .container .edu{
+        justify-content: space-around;
+        
+    }
+    .institute h3 {
+        color:#6d7983;
+        font-weight: 400;
+    }
+    .institute h5{
+        color: #a8bac9;
+    }
+    .institute div{
+        color: whitesmoke;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .about-div .content{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    
+    }
+    .intern{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 20px;
+        border: 2px solid gray;
+        border-radius: 5px;
+        padding: 10px;
+        transition-duration: 0.5s;
+        scale: 0.95;
+        margin-bottom: 20px;
+        min-height: 250px;
+    }
+    .intern p{
+        color: whitesmoke;
+    }
+    .intern-outcome{
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .intern:hover{
+        scale: 1;
+    }
+    .intern img{
+        display: block;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+        width: 150px;
+        /* aspect-ratio: 1/1; */
+    }
+    .intern .intern-des{
+        display: block;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    /* .intern:hover img{
+        opacity: 0;
+        display: none;
+        
+    } */
+    .intern:hover{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .intern:hover .intern-des{
+        opacity: 1;
+        display: none;
+        
+    }
+    .intern:hover .intern-outcome{
+        display: block;
+        opacity: 1;
+    }
+    
+    .carousel-item.active{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .intern-des h3{
+        color: #6d7983;
+    }
+    .carousel-item img{
+        
+        max-height: 300px; 
+    }
+    .a-des{
+        padding: 20px;
+        font-size: 20px;
+        font-weight: 300;
+        color: #7d8b96;
+        max-width: 70%;
+    }
+    .a-des b{
+        color: #a8bac9;
+        
+    }
+    .mail{
+        position: absolute;
+        /* rotate: 10deg; */
+        z-index: 999;
+        /* left: -50px; */
+        
+        border-radius: 5px;
+        display: none;
+        
+        
+    }
+    .flying1{
+        display: block;
+        animation-name: fly;
+        animation-fill-mode: forwards;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count:1;
+    }
+    .flying2{
+        display: block;
+        animation-name: fly2;
+        animation-fill-mode: forwards;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count:1;
+    }
+    .mail-con{
+        font-size: 0.8rem;
+        rotate: 0deg;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #ccc;
+        top: 10px;
+        position: relative;
+        background-color: rgba(0,0,0,1);
+    
+    }
+    @keyframes fly {
+        0%{
+            top: 0;
+            left: 0;
+        }
+        25%{
+            rotate: 20deg;
+            top: 8%;
+            left: 15%;
+        }
+        50%{
+            rotate: 10deg;
+            top: 15%;
+            left: 25%;
+        }
+        75%{
+            rotate: 0deg;
+            top: 10%;
+            left: 38%;
+        }
+        100%{
+            /* rotate: 10deg; */
+            top: 8%;
+            left: 50%;
+        }
+    }
+    @keyframes fly2 {
+        0%{
+            transform: scaleX(-1);
+            top: 8%;
+            left: 50%;
+        }
+        25%{
+            transform: scaleX(-1);
+            rotate: 0deg;
+            top: 10%;
+            left: 38%;
+        }
+        50%{
+            transform: scaleX(-1);
+            rotate: 10deg;
+            top: 15%;
+            left: 25%;
+        }
+        75%{
+            transform: scaleX(-1);
+            rotate: 20deg;
+            top: 8%;
+            left: 15%;
+        }
+        99%{
+            transform: scaleX(-1);
+            /* rotate: 10deg; */
+            top: 0;
+            left: 0;
+            
+        }
+        100%{
+            transform: scaleX(1);
+            display: none;
+            
+        }
+    }
+    @media (max-width:500px) {
+        .mail{
+            scale: 0.8;
+        }
     }
 </style>
 <body>
@@ -674,6 +970,17 @@
         </div>
     </div>
 
+    <div class="mail">
+        <button class="btn btn-outline-light mail-cancel" >X</button>
+        <div class="mail-con">
+            <h6>LETS CONNECT</h6>
+            <p>+91 9500552183</p>
+            <p>udhayadharanish.b@gmail.com</p>
+            <p><a href="https://www.linkedin.com/in/udhayadharanish-b-242980224/">linkedIn</a></p>
+        </div>
+        <img src="./images/mail.png" height="50px" alt="">
+    </div>
+
     <div class="home">
         <video autoplay muted loop>
             <source src="./images/video.mp4" type="video/mp4" />
@@ -687,11 +994,11 @@
             <div class="container">
                 <header class="d-flex justify-content-center py-3">
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a></li>
-                        <li class="nav-item"><a href="/myweb/achievement.html" id="achieve" class="nav-link">Skills</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" id="home-button" aria-current="page">Home</a></li>
+                        <li class="nav-item"><a href="#" id="skills" class="nav-link">Skills</a></li>
                         <li class="nav-item"><a href="#" id="project" class="nav-link">Projects</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="#" id="about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#" id="contact" class="nav-link">Contact</a></li>
                     </ul>
                 </header>
             </div>
@@ -706,104 +1013,362 @@
                     <h1 class="lh-2 mb-3 name " >I'M UDHAY </h1> 
                 </div>
             </div>
-          
-        </div>
-        <div class="project-div">
-            <div class="back" id="back">
-                <a href="#" ><img src="./images/backarrow.svg" height="40" alt=""> </a>
-            </div>
-            <div class="heading">
-                <h1>PROJECTS</h1>
-            </div>
-            <div class="container" id="container">
-                
-                
-                <div class="row">
-                    <div class="wire">
-                        <div class="line-1"></div>
-                        <button class="bulb" id="b1">
-                            <p class="turn">Website <br> Builder</p>
-                            <p class="switch">Turn on</p>
-
-                        </button>
-                    </div>
-                    <div class="wire">
-                        <div class="line-2"></div>
-                        <button class="bulb" id="b2">
-                            <p class="turn">Smart Mirror</p>
-                            <p class="switch">Turn on</p>
-                        </button>
-                    </div>
-                    <div class="wire">
-                        <div class="line-3"></div>
-                        <button class="bulb" id="b3">
-                            <p class="turn">Blog <br> Website</p>
-                            <p class="switch">Turn on</p>
-                        </button>
-                    </div>
-                    <div class="wire">
-                        <div class="line-4"></div>
-                        <button class="bulb" id="b4">
-                            <p class="turn">Parking System</p>
-                            <p class="switch">Turn on</p>
-                        </button>
-                    </div>
-                    <div class="wire">
-                        <div class="line-5"></div>
-                        <button class="bulb" id="b5">
-                            <p class="turn">EV Charging Booking System</p>
-                            <p class="switch">Turn on</p>
-                        </button>
-                    </div>
-                    <div class="wire">
-                        <div class="line-6"></div>
-                        <button class="bulb" id="b6">
-                            <p class="turn">Simple Authentication</p>
-                            <p class="switch">Turn on</p>
-                        </button>
-                    </div>
-        
-                    <div class="wire ">
-                        <div class="line-1"></div>
-                        <button class="bulb" id="b1">
-                            <p class="turn">Task Management System</p>
-                            <p class="switch">Turn on</p>
-                        </button>
-                    </div>
-                    <div class="wire">
-                        <div class="line-2"></div>
-                        <button class="bulb" id="b2">
-                            <p class="turn">Perfect One</p>
-                            <p class="switch">Turn on</p>
-                        </button>
-                    </div>  
-                    
+            <div class="project-div">
+                <!-- <div class="back" id="back">
+                    <a href="#" ><img src="./images/backarrow.svg" height="40" alt=""> </a>
+                </div> -->
+                <div class="heading">
+                    <h1>PROJECTS</h1>
                 </div>
-                <div class="project">
-                    <div class="light-container">
-                        <div class="line-3"></div>
-                        <button class="light bulb" >Turn off</button>
-                    </div>
-                    <div class="project-content container">
-                        <div>
-                            <img src="./images/project.avif"   alt="">
+                <div class="container" id="container">
+                    
+                    <div class="row">
+                        <div class="wire">
+                            <div class="line-1"></div>
+                            <button class="bulb" id="b1">
+                                <p class="turn">Website Builder</p>
+                                
+                            </button>
                         </div>
-                        <div class="text-content">
-                            <h1 id="p-title" >Project title</h1>
-                            <p id="p-para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium aut doloremque voluptatibus doloribus dicta magnam eius obcaecati tempora reiciendis unde quo corporis nemo adipisci error magni sunt animi, aspernatur similique. </p>
-                            <p id="tech-stack"> Tech Stacks : Java , Python , React , Node , SQL</p>
-                            <div style="display: flex;gap: 20px;">
-                                <button class="btn btn-success" style="display: flex;align-items: center;gap: 10px;"> Visit <img src="./images/link.svg" alt=""></button>
-                                <a href=""><img src="./images/github.svg" alt="" height="40"></a>    
+                        <div class="wire">
+                            <div class="line-1"></div>
+                            <button class="bulb" id="b1">
+                                <p class="turn">Contri.ai</p>
+                                
+                            </button>
+                        </div>
+                        <div class="wire">
+                            <div class="line-2"></div>
+                            <button class="bulb" id="b2">
+                                <p class="turn">Smart Mirror</p>
+                                
+                            </button>
+                        </div>
+                        <div class="wire">
+                            <div class="line-3"></div>
+                            <button class="bulb" id="b3">
+                                <p class="turn">Blog Website</p>
+                                
+                            </button>
+                        </div>
+                        <div class="wire">
+                            <div class="line-4"></div>
+                            <button class="bulb" id="b4">
+                                <p class="turn">Parking System</p>
+                                
+                            </button>
+                        </div>
+                        <div class="wire">
+                            <div class="line-5"></div>
+                            <button class="bulb" id="b5">
+                                <p class="turn">Department Store Software</p>
+                                
+                            </button>
+                        </div>
+                        <!-- <div class="wire">
+                            <div class="line-6"></div>
+                            <button class="bulb" id="b6">
+                                <p class="turn">Simple Authentication</p>
+                            </button>
+                        </div> -->
+            
+                        <div class="wire ">
+                            <div class="line-1"></div>
+                            <button class="bulb" id="b1">
+                                <p class="turn">Task Management System</p>
+                                
+                            </button>
+                        </div>
+                        <!-- <div class="wire">
+                            <div class="line-2"></div>
+                            <button class="bulb" id="b2">
+                                <p class="turn">Perfect One</p>
+                            </button>
+                        </div>   -->
+                        
+                    </div>
+                    <div class="project">
+                        <div class="light-container">
+                            <div class="line-3"></div>
+                            <button class="light bulb" >Turn off</button>
+                        </div>
+                        <div class="project-content container">
+                            <div>
+                                <img src="./images/project.avif"   alt="">
+                            </div>
+                            <div class="text-content">
+                                <h1 id="p-title" ></h1>
+                                <p id="p-para"></p>
+                                <span><p style="text-decoration: underline;">Tech Stacks</p><p id="tech-stack"></p></span>
+                                <div style="display: flex;gap: 20px;">
+                                    <button class="btn btn-success" style="display: flex;align-items: center;gap: 10px;"> Visit <img src="./images/link.svg" alt=""></button>
+                                    <a href=""><img src="./images/github.svg" alt="" height="40"></a>    
+                                </div>
                             </div>
                         </div>
                     </div>
+                    
+                </div>
+                
+            
+                
+            </div>
+            <div class="skills-div">
+                <!-- <div class="back" id="back">
+                    <a href="#" ><img src="./images/backarrow.svg" height="40" alt=""> </a>
+                </div> -->
+                <div class="heading">
+                    <h1>SKILLS</h1>
+                </div>
+                <div class="container">
+                    <div class="heading">
+                        <h4>PROGRAMMING LANGUAGE</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/python.png" alt="">
+                            <h5>PYTHON</h5>   
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/java-logo.png" alt="">
+                            <h5>JAVA</h5>   
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/java-script.png" alt="">
+                            <h5>JAVASCRIPT</h5>   
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/sql-server.png" alt="">
+                            <h5>SQL</h5>   
+                        </div>   
+                    </div>
+
+                    <br>
+
+                    <div class="heading">
+                        <h4>BACKEND FRAMEWORKS</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/nodejs.png" alt="">
+                            <h5>NODE (EXPRESS JS)</h5>   
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/flask.svg" alt="">
+                            <h5>FLASK</h5>   
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/brand-django.svg" alt="">
+                            <h5>DJANGO</h5>   
+                        </div>
+                           
+                    </div>
+
+                    <br>
+
+                    <div class="heading">
+                        <h4>FRONTEND TOOLS</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/html.png" alt="">
+                            <h5>HTML</h5>   
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/css.png" alt="">
+                            <h5>CSS</h5>   
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/jquery-plain.svg" alt="">
+                            <h5>JQUERY</h5>   
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/ejs.svg" alt="">
+                            <h5>EJS</h5>   
+                        </div>   
+                    </div>
+
+                    <br>
+
+                    <div class="heading">
+                        <h4>VERSION CONTROL</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img src="./images/git.svg" alt="">
+                            <h5>GIT</h5>   
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 skill-card">
+                            <img style="filter: invert(0);" src="./images/github.svg" alt="">
+                            <h5>GITHUB</h5>   
+                        </div>  
+                    </div>
+
                 </div>
             </div>
-            
+            <div class="about-div">
+                
+                <div class="heading">
+                    <h1>ABOUT ME</h1>
+                </div>
+                <br>
+                <div class="container">
+                    <p style="width: 100%;font-size: 22px;text-align: center;color: whitesmoke;font-weight: lighter;">As a motivated student, I aim to learn more about full-stack
+                        web development and apply my knowledge to real projects. My
+                        goal is to develop innovative solutions and grow in this field.
+                        </p>
+    
+                    <br>
+                </div>
+                <div class="content">
+
+                    <div class="heading">
+                        <h4>INTERNSHIPS</h4>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="intern col-md-6">
+                                
+                                <img src="./images/wec.png"   alt="">
+                                <div class="intern-des">        
+                                    <h3>WEC.AI</h3>
+                                    <p>Developed website integrating machine learning models from
+                                        backend to frontend using Flask and Django frameworks.
+                                        Designed community landing page with HTML, CSS, and
+                                        JavaScript</p>
+                                </div>
+                                <p class="intern-outcome"><a target="_blank" href="https://contri.ai/"><button class="btn btn-outline-light">Visit</button></a></p>
+                            </div>
+                            <div class="intern col-md-6">
+                                
+                                <img src="./images/katomaran.svg"   alt="">
+                                <div class="intern-des">        
+                                    <h3>KATOMARAN TECHNOLOGIES</h3>
+                                    <p>Gained fundamental knowledge in machine learning and its
+                                        applications in robotics. Learned to communicate Python
+                                        scripts effectively with robots</p>
+                                </div>
+                                <p class="intern-outcome"><a target="_blank" href="https://www.katomaran.com/"><button class="btn btn-outline-light">Visit</button></a></p>
+                            </div>
+                            <div class="intern col-md-6">
+                                
+                                <img src="./images/cloudzoo.png"   alt="">
+                                <div class="intern-des">        
+                                    <h3>CLOUDZOO INDIA SOFTWARES</h3>
+                                    <p>I gained knowledge in software testing. Tested functionality and
+                                        issues in both UI and UX.</p>
+                                </div>
+                                <p class="intern-outcome"><a target="_blank" href="https://cloudzoo.in/"><button class="btn btn-outline-light">Visit</button></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="heading">
+                        <h4>ACHIEVEMENTS & AWARDS</h4>
+                    </div>
+                    <br>
+                    <div class="achievements">
+                        <div class="container">
+                            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active" data-bs-interval="3000">
+                                    <img src="./images/kalamaward.jpg" class="d-block" alt="...">
+                                    <p class="a-des">Awarded the <b>Dr. Kalam Young
+                                                    Achiever Award 2023 </b> by the
+                                                    World Youth Federation. Invited
+                                                    to the esteemed ceremony at
+                                                    Anna University, Chennai.</p>
+                                  </div>
+                                  <div class="carousel-item" data-bs-interval="3000">
+                                    <img src="./images/ieee.jpg" class="d-block" alt="...">
+                                    <p class="a-des">Awarded <b>Honorable Mention at
+                                        IEEE Yesist12</b> and selected for the
+                                        Grand Finale</p>
+                                  </div>
+                                  <div class="carousel-item" data-bs-interval="3000">
+                                    <img src="./images/rig.jpg" class="d-block" alt="...">
+                                    <p class="a-des">Secured first prize at the 
+                                    <b>two-day National level Hackathon</b>
+                                        organized by Kumaraguru
+                                        College of Technology</p>
+                                  </div>
+                                  <div class="carousel-item" data-bs-interval="3000">
+                                    <img src="./images/amrita.jpg" class="d-block" alt="...">
+                                    <p class="a-des">Secured second prize at
+                                        ANOKHA 23, a <b>three-day project
+                                        expo</b> conducted by Amrita
+                                        Vishwa Vidyapeetham.</p>
+                                  </div>
+                                  <div class="carousel-item" >
+                                    <img src="./images/techexpo.jpg" class="d-block" alt="...">
+                                    <p class="a-des">At YUGAM 23, Kumaraguru College of Technology secured the <b>second prize at the Tech Expo</b>, showcasing their innovative prowess and excellence in technology.</p>
+                                  </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Next</span>
+                                </button>
+                              </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="heading">
+                        <h4>EDUCATION</h4>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="edu row">
+                            <div class="institute col-sm-6">
+                                <h3 style="text-decoration: underline;">B.E - Electronics and Communication Engineering</h3>
+                                <div>
+                                    <p>CGPA : 8.35 (Upto 5th semester)</p>
+                                    <p>2021-present</p>
+                                </div>
+                                
+                                <h5>KPR Institute of Engineering and Technology</h5>
+                                
+                            </div>
+                            
+                            <div class="institute col-sm-6">
+                                <h3 style="text-decoration: underline;">HSC</h3>
+                                <div>
+                                    <p>Percentage - 91.5</p>
+                                    <p>2019-2021</p>
+                                </div>
+                                
+                                <h5>Kumutha Matric Higher Secondary School</h5>
+                                
+                            </div>
         
-            
+                            
+        
+                            <div class="institute col-sm-6">
+                                <h3 style="text-decoration: underline;">SSLC</h3>
+                                <div>
+                                    <p>Percentage - 90.2</p>
+                                    <p>2016-2019</p>
+                                </div>
+                                
+                                <h5>Government Higher Secondary School</h5>
+                                
+                            </div>
+        
+                        </div>
+                    </div>
+                    
+                    
+
+                    
+                </div>
+            </div>
         </div>
+        
     </div>
 
     
@@ -814,12 +1379,114 @@
             $(".home").fadeIn();
         })
         var scroll = 0;
-        $('.bulb').on("click",(event)=>{
-            
-            $(event.target.classList['value'])
+        const projects_data = {
+                    "Smart Mirror" : {
+                        title : "AUTOMATED HAND HYGIENE MONITORING SYSTEM",
+                        description : "HealthMirror uses Computer Vision and Raspberry Pi to monitor hand hygiene in real-time, updating infection control departments via a live website.",
+                        tech_stacks : "Flask , OpenCV , HTML , CSS , JS"
+                    },
+                    "Blog Website" : {
+                        title : "BLOGGING PLATFORM",
+                        description : "A dynamic web platform with robust authentication enables users to write, read, update, and delete blogs through an intuitive interface.",
+                        tech_stacks : ": Node (Express JS) , PostgreSQL , HTML , CSS , EJS , JS"
+                    },
+                    "Website Builder" : {
+                                        title : "U-CODE WEBSITE BUILDER (LOW CODE NO CODE PLATFORM)",
+                                        description : "A user-friendly website builder enables effortless creation of stunning websites, allowing customization and easy download for online presence.",
+                                        tech_stacks : "Flask , HTML , CSS , JS"
+                                    },
+                    "Contri.ai" : {
+                        title : "CONTRI.AI",
+                        description : "Developed the website for the company contri.ai. Through website development, I acquired knowledge in cube animations and honed my JavaScript skills, empowering me to craft compelling landing pages with dynamic elements and interactive features",
+                        tech_stacks : "HTML , CSS , JS"
+                    },
+                    "Task Management System" : {
+                                        title : "Task Management System",
+                                        description : "It sorts your tasks based on when they're due and how stressed you feel about them. With our system, you can manage your work easily and focus on what's important.",
+                                        tech_stacks : "Django , Flask , HTML , CSS , JS"
+                                    },
+                    "Department Store Software" : {
+                        title : "Department Store Software",
+                        description : " In this the owner can add , update , delete Items and customers can buy items . The item added to the cart , when customer buys any item .It will generate softcopy of bill at end of the shopping .",
+                        tech_stacks : "Tkinter Python"
+                    },
+                    "Parking System" : {
+                                        title : "Under Construction ",
+                                        description : "The project is going on ",
+                                        tech_stacks : "Node JS , Express , PostgreSQL , EJS , HTML , CSS , JS"
+                                    }
+                }
+        var scroll = 0;
+
+        $('.bulb').on("click", (event) => {
+            var div = event.target;
+            var title = div.innerHTML;
+            console.log(title);
+            if (title == "Smart Mirror") {
+                console.log("hey");
+                $("#p-title").html(projects_data[title].title);
+                $("#p-para").html(projects_data[title].description);
+                $("#tech-stack").html(projects_data[title].tech_stacks);
+            }
+            if (title == "Blog Website") {
+                console.log("hey");
+                $("#p-title").html(projects_data[title].title);
+                $("#p-para").html(projects_data[title].description);
+                $("#tech-stack").html(projects_data[title].tech_stacks);
+            }
+            if (title == "Website Builder") {
+                console.log("hey");
+                $("#p-title").html(projects_data[title].title);
+                $("#p-para").html(projects_data[title].description);
+                $("#tech-stack").html(projects_data[title].tech_stacks);
+            }
+            if (title == "Contri.ai") {
+                console.log("hey");
+                $("#p-title").html(projects_data[title].title);
+                $("#p-para").html(projects_data[title].description);
+                $("#tech-stack").html(projects_data[title].tech_stacks);
+            }
+            if (title == "Task Management System") {
+                console.log("hey");
+                $("#p-title").html(projects_data[title].title);
+                $("#p-para").html(projects_data[title].description);
+                $("#tech-stack").html(projects_data[title].tech_stacks);
+            }
+            if (title == "Department Store Software") {
+                console.log("hey");
+                $("#p-title").html(projects_data[title].title);
+                $("#p-para").html(projects_data[title].description);
+                $("#tech-stack").html(projects_data[title].tech_stacks);
+            }
+            if (title == "Parking System") {
+                console.log("hey");
+                $("#p-title").html(projects_data[title].title);
+                $("#p-para").html(projects_data[title].description);
+                $("#tech-stack").html(projects_data[title].tech_stacks);
+            }
+            // if (title == "Simple Authentication") {
+            //     console.log("hey");
+            //     $("#p-title").html(projects_data[title].title);
+            //     $("#p-para").html(projects_data[title].description);
+            //     $("#tech-stack").html(projects_data[title].tech_stacks);
+            // }
+            else {
+                
+                var p = $(div).find("p").html();
+                console.log(p)
+                if(p){
+                    $("#p-title").html(projects_data[p].title);
+                $("#p-para").html(projects_data[p].description);
+                $("#tech-stack").html(projects_data[p].tech_stacks);
+                }
+                
+                // console.log(p);
+            }
+
+
+            // console.log($(event.target));
             $(".row").fadeToggle(300);
             $(".project").fadeToggle(300);
-    
         })
 
         
@@ -858,8 +1525,14 @@
         // Set the interval for scrolling (adjust as needed)
          // Adjust the interval as needed
 
-        
-        
+        $("#contact").click(()=>{
+            $(".mail").addClass("flying1");
+            $(".mail").removeClass("flying2");
+        })
+        $(".mail-cancel").click(()=>{
+            $(".mail").addClass("flying2");
+            $(".mail").removeClass("flying1");
+        })
         
                 
     
@@ -867,12 +1540,35 @@
     <script>
         $("#project").click(()=>{
             console.log($("#project"));
-            $(".home-content").fadeOut();
+            $(".banner").fadeOut();
+            $(".skills-div").fadeOut();
+            $(".about-div").fadeOut();
             $(".project-div").fadeIn();
         })
         $("#back").click(()=>{
             $(".project-div").fadeOut();
-            $(".home-content").fadeIn();
+            $(".skills-div").fadeOut();
+            $(".about-div").fadeOut();
+            $(".banner").fadeIn();
+        })
+        $("#home-button").click(()=>{
+            $(".project-div").fadeOut();
+            $(".skills-div").fadeOut();
+            $(".about-div").fadeOut();
+            $(".banner").fadeIn();
+
+        })
+        $("#skills").click(()=>{
+            $(".project-div").fadeOut();
+            $(".banner").fadeOut();
+            $(".skills-div").fadeIn();
+            $(".about-div").fadeOut();
+        })
+        $("#about").click(()=>{
+            $(".project-div").fadeOut();
+            $(".banner").fadeOut();
+            $(".skills-div").fadeOut();
+            $(".about-div").fadeIn();
         })
         
     </script>
