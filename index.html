@@ -572,7 +572,7 @@
     }
     .project-content div img{
         max-height: 300px;
-        max-width:100%;
+        max-width: 100%;
     }
     .text-content{
         max-width: 400px;
@@ -589,11 +589,17 @@
         z-index: 99;
         
     }
-    .back a{
+    .back a {
         color: whitesmoke;
         font-weight: 300;
         text-decoration: underline;
         font-size: 25px;
+    }
+    .freelance{
+        font-size: 20px;
+        font-weight: lighter;
+        color: white;
+        text-align: center;
     }
     .achievements{
         min-height: 300px;
@@ -890,6 +896,14 @@
         background-color: rgba(0,0,0,1);
     
     }
+    .mail-cancel{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mail-cancel:hover{
+        background-color: rgba(255,255,255,0.5);
+    }
     @keyframes fly {
         0%{
             top: 0;
@@ -973,7 +987,7 @@
     </div>
 
     <div class="mail">
-        <button class="btn btn-outline-light mail-cancel" >X</button>
+        <button class="btn btn-outline-light mail-cancel" ><img src="./images/cancel.svg" height="15px" width="15px" alt=""></button>
         <div class="mail-con">
             <h6>LETS CONNECT</h6>
             <p>+91 9500552183</p>
@@ -1111,6 +1125,7 @@
                     </div>
                     
                 </div>
+                <p class="freelance">Freelanced Projects : 3</p>
                 
             
                 
